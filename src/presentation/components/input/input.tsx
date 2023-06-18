@@ -25,7 +25,7 @@ const Input: React.FC<Props> = (props: Props) => {
 
   return (
     <div className={Styles.inputWrap}>
-      <input {...props} data-testId={props.name} onChange={handleChange} />
+      <input {...props} data-testid={props.name} onChange={handleChange} />
       <span
         data-testid={`${props.name}-status`}
         title={getTitle()}
