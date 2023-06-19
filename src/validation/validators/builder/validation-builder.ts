@@ -1,5 +1,6 @@
 import { FieldValidation } from '@/validation/protocols/field-validation'
 import { RequiredFieldValidation } from '@/validation/validators/required-field/required-field-validation'
+import { EmailValidation } from '../email/email-validation'
 
 export class ValidationBuilder {
   // eslint-disable-next-line no-useless-constructor
@@ -14,6 +15,11 @@ export class ValidationBuilder {
 
   required(): ValidationBuilder {
     this.validations.push(new RequiredFieldValidation(this.fieldname))
+    return this
+  }
+
+  email(): ValidationBuilder {
+    this.validations.push(new EmailValidation(this.fieldname))
     return this
   }
 
